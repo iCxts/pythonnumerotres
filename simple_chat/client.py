@@ -9,7 +9,9 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
 
     while True:
         message = input("Enter message: ")
-        # message = "exit"
+        if message.lower() == 'exit':
+            print('Exiting...')
+            break
         s.send((message).encode())
 
         message_received = ""
